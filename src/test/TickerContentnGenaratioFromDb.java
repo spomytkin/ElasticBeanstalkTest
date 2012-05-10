@@ -29,7 +29,6 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.simpledb.AmazonSimpleDB;
 import com.amazonaws.services.simpledb.AmazonSimpleDBClient;
 import com.amazonaws.services.simpledb.model.Attribute;
-import com.amazonaws.services.simpledb.model.CreateDomainRequest;
 import com.amazonaws.services.simpledb.model.Item;
 import com.amazonaws.services.simpledb.model.SelectRequest;
 
@@ -329,7 +328,7 @@ private static class TickerRow {
 		String date = (new Date()).toString();
 		
 		out.write("<table id='tickerTable' border='0' cellpadding='0' cellspacing='0'>\n");
-		out.write("<caption align='top'>Last update:" +date +  "</caption>\n");
+		out.write("<caption align='top'>Last update:" +date +  "</caption>  where Change_Date = '3-3-2012'\n");
 		out.write("<thead>\n");
 		out.write("   <th>Name</th>\n");
 		out.write("   <th>Price</th>\n");
