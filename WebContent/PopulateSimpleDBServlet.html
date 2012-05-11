@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TickerContentGenaration</title>
+</head>
+<body>
+
+<form action="PopulateSimpleDBServlet" >
+
+   <table>
+      <tr>
+        <td colspan="2" style="font-weight:bold;">Fill Init. parameters:</td>        
+      </tr>
+      <tr>
+        <td>
+				 From - starting index
+		</td>
+        <td>
+				<input name="from" type="text" value="500001">
+		</td>
+      </tr>
+      <tr>
+        <td>
+				 batchPutNum (max 25) - records per request
+		</td>
+        <td>
+				<input name="batchPutNum" type="text" value="20">
+		</td>
+      </tr>
+      <tr>
+        <td>
+				reportEveryBatch - write message every ... requests
+		</td>
+        <td>
+				<input name="reportEveryBatch" type="text" value="5">
+		</td>
+      </tr>      
+	<tr>
+        <td>
+				numReports - number of reports
+		</td>
+        <td>
+				<input name="numReports" type="text" value="100">
+		</td>
+     </tr>
+
+
+    </table>
+    <input type="submit" name="Generate" value="Generate">
+			</form>
+    
+</body>
+</html>

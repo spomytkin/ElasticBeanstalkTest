@@ -21,7 +21,7 @@ import com.amazonaws.services.simpledb.model.ReplaceableItem;
 import com.amazonaws.services.simpledb.model.SelectRequest;
 
 
-public class PopulateSimpleDB {
+public class PopulateSimpleDBTicker {
 
     public static void main(String[] args) throws Exception {
         /*
@@ -31,7 +31,7 @@ public class PopulateSimpleDB {
          * http://aws.amazon.com/security-credentials
          */
         AmazonSimpleDB sdb = new AmazonSimpleDBClient(new PropertiesCredentials(
-                PopulateSimpleDB.class.getResourceAsStream("AwsCredentials.properties")));
+        		PopulateSimpleDBTicker.class.getResourceAsStream("AwsCredentials.properties")));
 
         System.out.println("===========================================");
         System.out.println("    populate SimpleDB with Ticker data");
@@ -96,18 +96,20 @@ public class PopulateSimpleDB {
     private static List<ReplaceableItem> createSampleData() {
         List<ReplaceableItem> sampleData = new ArrayList<ReplaceableItem>();
 
-        sampleData.add(new ReplaceableItem("Item_05").withAttributes(
+        sampleData.add(new ReplaceableItem("Item_08").withAttributes(
                 new ReplaceableAttribute("Name", "Item_01", true),
                 new ReplaceableAttribute("Price", "6460.19", true),
                 new ReplaceableAttribute("Number", "132", true),
-                new ReplaceableAttribute("Change Time", "20:13:54", true),
+                new ReplaceableAttribute("Change_Time", "20:13:55", true),
+                new ReplaceableAttribute("rowUpdated", "true", true),
                 new ReplaceableAttribute("Change_Date", "3-3-2012", true)));
+        
 
-        sampleData.add(new ReplaceableItem("Item_06").withAttributes(
+        sampleData.add(new ReplaceableItem("Item_09").withAttributes(
                 new ReplaceableAttribute("Name", "Item_02", true),
                 new ReplaceableAttribute("Price", "1212", true),
                 new ReplaceableAttribute("Number", "11", true),
-                new ReplaceableAttribute("Change Time", "20:13:55", true),
+                new ReplaceableAttribute("Change_Time", "20:13:55", true),
                 new ReplaceableAttribute("Change_Date", "3-3-2012", true)));
 
 

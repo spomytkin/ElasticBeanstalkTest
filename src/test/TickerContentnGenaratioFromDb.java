@@ -155,7 +155,15 @@ private ArrayList<TickerRow> getRowList(PrintWriter pw) {
                     	tr.setPrice(attribute.getValue()+" ");
                     	}else if(attribute.getName().equals("Number")){
                         	tr.setNumber(attribute.getValue()+" ");
-                       }
+                       }else if(attribute.getName().equals("Change Time")){
+                       	tr.setTime(attribute.getValue()+" ");
+                      }else if(attribute.getName().equals("Change_Date")){
+                         	tr.setDate(attribute.getValue()+" ");
+                        }else if(attribute.getName().equals("rowUpdated")){
+                         	tr.setRowUpdated(true);
+                        }
+                
+                
             }
             
             rl.add(tr);
@@ -244,6 +252,46 @@ private static class TickerRow {
 		boolean dateChanged = false;
 		public boolean rowUpdated;
 		
+		public boolean isPriceChanged() {
+			return priceChanged;
+		}
+
+
+		public void setPriceChanged(boolean priceChanged) {
+			this.priceChanged = priceChanged;
+		}
+
+
+		public boolean isNumberChanged() {
+			return numberChanged;
+		}
+
+
+		public void setNumberChanged(boolean numberChanged) {
+			this.numberChanged = numberChanged;
+		}
+
+
+		public boolean isDateChanged() {
+			return dateChanged;
+		}
+
+
+		public void setDateChanged(boolean dateChanged) {
+			this.dateChanged = dateChanged;
+		}
+
+
+		public boolean isRowUpdated() {
+			return rowUpdated;
+		}
+
+
+		public void setRowUpdated(boolean rowUpdated) {
+			this.rowUpdated = rowUpdated;
+		}
+
+
 		public TickerRow() {
 			super();
 			
